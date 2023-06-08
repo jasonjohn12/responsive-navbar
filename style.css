@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: #f8f8f8;
+  font-family: "Open Sans", sans-serif;
+}
+.navbar {
+  margin: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+  font-size: 1rem;
+}
+.navbar-links li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-links li a:hover {
+  color: #eeeee4;
+}
+
+.toggle-button {
+  cursor: pointer;
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  padding: 0;
+  height: 24px;
+  border: none;
+  box-shadow: none;
+  transition: all 0.25s;
+}
+.bar1,
+.bar2,
+.bar3 {
+  width: 24px;
+  position: absolute;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+  transform: rotate(0);
+}
+
+.bar2 {
+  transform: translateY(7px);
+}
+.bar3 {
+  transform: translateY(14px);
+}
+
+/* ROTATE FIRST BAR */
+.active .bar1 {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.active .bar2 {
+  display: none;
+}
+
+/* ROTATE LAST BAR */
+.active .bar3 {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.navlinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.navlink-item a {
+  padding: 10px 20px;
+  margin: 10px 20px;
+  text-decoration: none;
+  color: #f8f8f8;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    /* margin: 10px 20px; */
+    /* padding: 10px 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .toggle-button {
+    display: flex;
+  }
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    /* padding: 0.5rem 1rem; */
+    font-size: 1.2rem;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+}
